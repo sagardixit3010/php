@@ -22,14 +22,42 @@ An array stores multiple values in one single variable
 
     echo count($friends);
 
-
-
      ?>
 
-  <!--Checkboxes-->
-  
+  <!--Checkboxes
+Let the user select one or more options of a limited number of choices.
+-->
+  <form action="part5.php" method="post">
+    Apples:<input type="checkbox" name="fruits[]" value="apples"><br>
+    Oranges:<input type="checkbox" name="fruits[]" value="oranges"><br>
+    Pears:<input type="checkbox" name="fruits[]" value="pears"><br>
+    <input type="submit">
+  </form>
 
+  <?php
+    $fruits =$_POST["fruits"];
+    echo $fruits[1];
 
+  ?>
+<!--Associative Array(=>)
+Key-Value Pair
+Keys should be unique-->
+
+<form action="part5.php" method="post">
+  <input type="text" name="student">
+  <input type="submit">
+</form>
+
+<?php
+  $grades = array("Sagar"=>59,"Sachin"=>80,"Sanju"=>10);
+  $grades["Sachin"]=90;//Modify the value using key
+  echo $grades["Sachin"];//Accessing elements using key
+ ?>
+
+<?php
+  $grades = array("Sagar"=>59,"Sachin"=>80,"Sanju"=>10);
+  echo $grades[$_POST["student"]];
+?>
 
   </body>
 </html>
